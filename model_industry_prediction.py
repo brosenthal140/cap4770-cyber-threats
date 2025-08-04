@@ -28,13 +28,13 @@ dt.fit(X_train, y_train)
 # Metrics and confusion matrices
 # Logistic Regression
 # Predictions and metrics
-y_pred = log_reg.predict(X_test)
+y_pred_logreg = log_reg.predict(X_test)
 print("Logistic Regression Results:")
-print("Macro F1-Score:", f1_score(y_test, y_pred, average='macro'))
+print("Macro F1-Score:", f1_score(y_test, y_pred_logreg, average='macro'))
 print("Macro AUC-ROC (OvR):", roc_auc_score(y_test, log_reg.predict_proba(X_test), multi_class='ovr'))
 
 # Confusion matrix
-cm = confusion_matrix(y_test, y_pred)
+cm = confusion_matrix(y_test, y_pred_logreg)
 plt.figure(figsize=(8, 6))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=classes, yticklabels=classes)
 plt.title('Confusion Matrix - Logistic Regression')
@@ -47,13 +47,13 @@ plt.show()
 
 # Random Forest
 # Predictions and metrics
-y_pred = random_forest_model.predict(X_test)
+y_pred_rf = random_forest_model.predict(X_test)
 print("Random Forest Results:")
-print("Macro F1-Score:", f1_score(y_test, y_pred, average='macro'))
+print("Macro F1-Score:", f1_score(y_test, y_pred_rf, average='macro'))
 print("Macro AUC-ROC (OvR):", roc_auc_score(y_test, random_forest_model.predict_proba(X_test), multi_class='ovr'))
 
 # Confusion matrix
-cm = confusion_matrix(y_test, y_pred)
+cm = confusion_matrix(y_test, y_pred_rf)
 plt.figure(figsize=(8, 6))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=classes, yticklabels=classes)
 plt.title('Confusion Matrix - Random Forest')
