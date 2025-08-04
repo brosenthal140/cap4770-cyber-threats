@@ -15,6 +15,7 @@ Each script can be executed separately:
 - feature_engineering.py encodes categorical features, scales numerics, and computes class weights
 - model_industry_prediction.py trains classifiers (Logistic Regression, Decision Tree, Random Forest) to predict target industries
 - model_loss_prediction.py bins loss amounts and predicts financial loss categories
+- model_users_prediction.py bins affected users and predicts the impact of an attack
 
 The Output
 - Saved plots include:
